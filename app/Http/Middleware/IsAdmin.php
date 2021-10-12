@@ -16,7 +16,7 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!auth()->check() || auth()->user()->email !== 'admin@gmail.com') {
+        if (!auth()->check() || auth()->user()->email !== 'admin@gmail.com' || !auth()->user()->isAdmin) {
             abort(403, 'Unauthorized action.');
         }
 
