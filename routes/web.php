@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/story/{id}', 'StoryController@show')->name('story.show');
+Route::get('/story', [StoryController::class, 'index'])->name('story.index');
+Route::post('/story', [StoryController::class, 'store'])->name('story.store');
