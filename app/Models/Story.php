@@ -10,6 +10,6 @@ class Story extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'body', 'image', 'like_count', 'comment_count'
+        'title', 'body', 'image', 'language', 'like_count', 'comment_count'
     ];
 }

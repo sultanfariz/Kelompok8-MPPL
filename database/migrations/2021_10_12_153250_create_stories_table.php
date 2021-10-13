@@ -16,10 +16,11 @@ class CreateStoriesTable extends Migration
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('body');
+            $table->text('body');
             $table->string('image');
-            $table->string('like_count');
-            $table->string('comment_count');
+            $table->string('language');
+            $table->string('like_count')->default(0);
+            $table->string('comment_count')->default(0);
             $table->timestamps();
         });
     }
