@@ -26,6 +26,17 @@ class StoryController extends Controller
      */
     public function create()
     {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         $this->authorize('admin');
 
         $validatedData = request()->validate([
@@ -51,17 +62,6 @@ class StoryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -69,7 +69,8 @@ class StoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $story = Story::find($id);
+        return view('story.show', ['story' => $story]);
     }
 
     /**
@@ -92,7 +93,28 @@ class StoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->authorize('admin');
+        $story = Story::find($id);
+
+        $validatedData = request()->validate([
+            'title' => 'required|max:255',
+            'body' => 'required|min:50',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'language' => 'required|max:3',
+        ]);
+
+        $story->title = $validatedData['title'];
+        $story->body = $validatedData['body'];
+        $story->language = $validatedData['language'];
+
+        $image = $validatedData['image'];
+        $imageName = time() . '_' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $imageName);
+        $story->image = $imageName;
+
+        $story->save();
+
+        return redirect('/story')->with('success', 'Story has been updated');
     }
 
     /**
@@ -103,6 +125,10 @@ class StoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->authorize('admin');
+        $story = Story::find($id);
+        $story->delete();
+
+        return redirect('/story')->with('success', 'Story has been deleted');
     }
 }
