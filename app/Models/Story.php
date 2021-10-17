@@ -12,4 +12,9 @@ class Story extends Model
     protected $fillable = [
         'title', 'body', 'image', 'language', 'like_count', 'comment_count'
     ];
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
