@@ -14,9 +14,14 @@ use App\Http\Controllers\StoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [StoryController::class, 'index'])->name('story.index');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/story', function () {
+//     return view('stories');
+// });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
