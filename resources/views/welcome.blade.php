@@ -142,8 +142,32 @@
                         </div>
                     </div>
                 </div> --}}
-            
+
+                
                 <div class="flex flex-col py-6">
+                    <div class="flex flex-row py-6">
+                        <div class=" px-100 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+                            @foreach($stories as $story)
+                            <div class="max-w-lg mx-auto col-span-3">
+                                <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
+                                    <a href="#">
+                                        <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                                    </a>
+                                    <div class="p-5">
+                                        <a href="#">
+                                            <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
+                                        </a>
+                                        <p class="font-normal text-gray-700 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                                        <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
+                                            Read more
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
                     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">

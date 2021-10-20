@@ -24,9 +24,10 @@ Route::get('/', [StoryController::class, 'index'])->name('story.index');
 // });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    // $this->authorize('admin');
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/story/{id}', 'StoryController@show')->name('story.show');
 Route::get('/story', [StoryController::class, 'index'])->name('story.index');
 Route::post('/story', [StoryController::class, 'store'])->name('story.store');
+Route::get('/story/{id}', [StoryController::class, 'show'])->name('story.show');

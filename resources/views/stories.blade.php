@@ -43,13 +43,13 @@
                         <tbody class="bg-white divide-y divide-gray-200">
                             @foreach($stories as $story)
                             <tr>
-                                <!-- <td class="px-6 py-4 whitespace-nowrap">
+                                {{-- <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
                                             <div class="text-sm font-medium text-gray-900">
                                                 {{$story->title}}
                                             </div>
                                     </div>
-                                </td> -->
+                                </td> --}}
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="text-sm text-gray-900">{{$story->body}}</div>
                                 </td>
