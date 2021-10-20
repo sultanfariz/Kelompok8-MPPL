@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StoryController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,6 @@ use App\Http\Controllers\StoryController;
 |
 */
 
-Route::get('/', [StoryController::class, 'index'])->name('story.index');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -23,11 +24,14 @@ Route::get('/', [StoryController::class, 'index'])->name('story.index');
 //     return view('stories');
 // });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    // $this->authorize('admin');
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     // $this->authorize('admin');
+//     return view('dashboard');
+// })->name('dashboard');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+
+Route::get('/', [StoryController::class, 'index'])->name('story.index');
 Route::get('/story', [StoryController::class, 'index'])->name('story.index');
 Route::post('/story', [StoryController::class, 'store'])->name('story.store');
 Route::get('/story/{id}', [StoryController::class, 'show'])->name('story.show');

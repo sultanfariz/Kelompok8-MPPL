@@ -6,21 +6,32 @@
                 <!-- Logo -->
                 <!-- show logo if user already logged in -->
                 {{-- @if (Auth::check()) --}}
-                    <div class="flex-shrink-0 flex items-center">
-                        <a href="{{ route('dashboard') }}">
-                            <x-jet-application-mark class="block h-9 w-auto" />
-                        </a>
-                    </div>
+                {{-- @if (Session::get('isAdmin', 0)) --}}
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="
+                    @admin
+                        {{ route('dashboard') }}
+                    @else
+                        {{ route('story.index') }}
+                    @endadmin
+                    ">
+                        <x-jet-application-mark class="block h-9 w-auto" />
+                    </a>
+                </div>
                 {{-- @endif --}}
                     
-                    <!-- Navigation Links -->
-                    @if (Auth::check())
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                                {{ __('Dashboard') }}
-                            </x-jet-nav-link>
-                        </div>
-                    @endif
+                <!-- Navigation Links -->
+                {{-- @if (Session::get('isAdmin', 0)) --}}
+                {{-- @if (Auth::check()) --}}
+                @admin
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                            {{ __('Dashboard') }}
+                        </x-jet-nav-link>
+                    </div>
+                @endadmin
+                {{-- @endif --}}
+                {{-- @endif --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('story.index') }}" :active="request()->routeIs('story.index')">
                         {{ __('Stories') }}
