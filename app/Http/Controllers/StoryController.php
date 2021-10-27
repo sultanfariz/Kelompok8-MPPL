@@ -25,7 +25,7 @@ class StoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('story.create');
     }
 
     /**
