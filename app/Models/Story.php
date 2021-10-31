@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Story extends Model
 {
+    const EXCERPT_LENGTH = 200;
+
     use HasFactory;
 
     protected $fillable = [
@@ -16,5 +19,10 @@ class Story extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function excerpt()
+    {
+        return Str::limit($this->body, Story::EXCERPT_LENGTH);
     }
 }
