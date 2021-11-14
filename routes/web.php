@@ -33,5 +33,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [AdminControl
 
 Route::get('/', [StoryController::class, 'index'])->name('story.index');
 Route::get('/story', [StoryController::class, 'index'])->name('story.index');
+Route::get('/story/create', [StoryController::class, 'create'])->name('story.create');
 Route::post('/story', [StoryController::class, 'store'])->name('story.store');
 Route::get('/story/{id}', [StoryController::class, 'show'])->name('story.show');
