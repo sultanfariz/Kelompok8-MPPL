@@ -16,35 +16,29 @@ use App\Http\Controllers\CommentController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
-// Route::get('/story', function () {
-//     return view('stories');
-// });
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard-admin', [AdminController::class, 'index'])->name('dashboard-admin');
 
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     // $this->authorize('admin');
-//     return view('dashboard');
-// })->name('dashboard');
+// User Routes
+Route::get('/', function(){
+    return view('home');
+});
+Route::get('/home', function(){
+    return view('home');
+});
+// Route::get('/signin', function(){return view('signin');});
+// Route::post('/signin', [UserController::class, 'signin']);
+// Route::get('/signup', function(){return view('signup');});
+// Route::post('/signup', [UserController::class, 'signup']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
-
-Route::get('/', [StoryController::class, 'index'])->name('story.index');
+// Route::get('/', [StoryController::class, 'index'])->name('story.index');
 Route::get('/story', [StoryController::class, 'index'])->name('story.index');
 Route::get('/story/create', [StoryController::class, 'create'])->name('story.create');
 Route::post('/story', [StoryController::class, 'store'])->name('story.store');
 Route::get('/story/{id}', [StoryController::class, 'show'])->name('story.show');
 Route::get('/book', function(){
     return view('story-book');
-});
-Route::get('/home', function(){
-    return view('home');
-});
-Route::get('/signin', function(){
-    return view('signin');
-});
-Route::get('/signup', function(){
-    return view('signup');
 });

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class AdminController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +15,27 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $isAdmin = $this->authorize('admin');
-        if ($isAdmin) {
-            return view('dashboard');
-        } else {
-            return redirect('/');
-        }
+        return redirect('/home');
+    }
+
+    /**
+     * Sign up a new user.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function signup()
+    {
+        return redirect('/signup');
+    }
+
+    /**
+     * Sign in a user.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function signin()
+    {
+        return redirect('/signin');
     }
 
     // /**
@@ -32,16 +48,34 @@ class AdminController extends Controller
     //     //
     // }
 
-    // /**
-    //  * Store a newly created resource in storage.
-    //  *
-    //  * @param  \Illuminate\Http\Request  $request
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'fullname' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:8|confirmed',
+        ]);
+        
+        return User::create([
+            'fullname' => $validatedData['fullname'],
+            'email' => $validatedData['email'],
+            'password' => Hash::make($validatedData['password']),
+        ]);
+        // $user = new User();
+        // $user->title = $validatedData['title'];
+        // $user->body = $validatedData['body'];
+        // $user->language = $validatedData['language'];
+
+        // $user->save();
+
+        return redirect('/home')->with('success', 'User has been registered');
+    }
 
     // /**
     //  * Display the specified resource.
