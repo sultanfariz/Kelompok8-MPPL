@@ -39,6 +39,13 @@
                 <p class="text-3xl my-4">Give warmth to your child through stories.</p>
             </div>
         </div>
+
+         @if (session('status'))
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ session('status') }}
+            </div>
+        @endif
+        
         <div class="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0" style="background-color: #161616;">
             <div class="absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center" style="background-image: url(https://images.unsplash.com/photo-1532789339108-2ebc484efbf1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNoaWxkJTIwYm9va3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);">
                 <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
@@ -48,18 +55,19 @@
                     <img src="img/logo-white.png" class="items-center justify-center inline-flex" alt="Dongeng.in">
                 </h1>
                 <div class="py-6 space-x-2"></div>
-                <form action="" class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
+                <form action="{{ route('login') }}" class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
+                    @csrf
                     <div class="pb-2 pt-4">
-                        <input type="email" name="email" id="email" placeholder="Email" class="block w-full p-4 text-lg rounded-sm bg-black">
+                        <input type="email" name="email" id="email" placeholder="Email" class="block w-full p-4 text-lg rounded-sm bg-black" :value="old('email')" required autofocus>
                     </div>
                     <div class="pb-2 pt-4">
-                        <input class="block w-full p-4 text-lg rounded-sm bg-black" type="password" name="password" id="password" placeholder="Password">
+                        <input class="block w-full p-4 text-lg rounded-sm bg-black" type="password" name="password" id="password" placeholder="Password" autocomplete="current-password" required>
                     </div>
                     <div class="text-right text-gray-400 hover:underline hover:text-gray-100">
-                        <a href="#">Forgot your password?</a>
+                        <a href="{{ route('password.request') }}">{{ __('Forgot your password?') }}</a>
                     </div>
                     <div class="px-4 pb-2 pt-4">
-                        <button class="uppercase block w-full p-4 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none">sign in</button>
+                        <button class="uppercase block w-full p-4 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none">{{ __('Sign in') }}</button>
                     </div>
                 </form>
             </div>

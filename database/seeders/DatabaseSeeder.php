@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             StorySeeder::class,
             TagSeeder::class,
+            CommentSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 
