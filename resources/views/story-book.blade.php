@@ -35,7 +35,7 @@
             }
         </style>        
     </head>
-    <body class="antialiased">
+    <body class="antialiased bg-gray-800">
         <header>
             <nav class="flex items-center justify-between flex-wrap bg-teal p-6">
                 <div class="flex items-center flex-no-shrink text-white mr-6">
@@ -53,8 +53,159 @@
                 </div>
               </nav>
         </header>
-        <section class="flex items-center justify-between flex-wrap bg-teal p-6" style="width: 11400px">
-            <iframe style="width:900px;height:600px" src="https://online.fliphtml5.com/ikmgs/yhfv/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+        {{-- <section>
+            <iframe class="flex items-center justify-between flex-wrap bg-teal p-6" style="width:100%;height:700px" src="https://online.fliphtml5.com/ikmgs/yhfv/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+        </section>
+        <section>
+            <div class="flex flex-row p-2 font-sans">
+                <h2 class="font-bold ml-4 mr-32">
+                    Judul
+                </h2> :
+                <p class="mx-4">
+                    Si Kancil yang Jujur
+                </p>
+            </div>
+            <div class="flex flex-row p-2 font-sans">
+                <h2 class="font-bold ml-4 mr-10">
+                    Deskripsi Singkat
+                </h2> :
+                <p class="mx-4">
+                    Cerita ini tentang Kancil yang cerdik. Dapat mengajarkan pada anak bahwa dengan menjadi jujur akan mendapatkan kebahagiaan.
+                </p>
+            </div>           
+        </section> --}}
+        <section>
+            <div class="shadow-md bg-gray-800 text-gray-200 m-8 p-6 rounded" x-data="{open: false}">
+                <iframe class="flex items-center justify-between flex-wrap bg-teal p-6" style="width:100%;height:700px" src="https://online.fliphtml5.com/ikmgs/yhfv/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+                <hr class="mb-4 border-gray-700">
+                <div class="flex items-center">
+                <img class="w-auto h-20 mr-4" src="img/book-vector.png">
+                <div class="description">
+                    <div class="flex flex-row items-center">
+                    <a href="https://wikipedia.org"><h1 class="text-2xl font-semibold mr-4">Kancil yang Jujur</h1></a>
+                    {{-- <div class="rounded-full bg-purple-600 text-gray-100 mr-3"><span class="font-semibold p-3">budi pekerti</span></div>
+                    <div class="rounded-full bg-green-600 text-gray-100"><span class="font-semibold p-3">fabel</span></div> --}}
+                    </div>
+                    <p>Cerita ini tentang Kancil yang cerdik. Dapat mengajarkan pada anak bahwa dengan menjadi jujur akan mendapatkan kebahagiaan.</p>
+                </div>
+                <!-- Button for opening card -->
+                {{-- <div class="ml-4">
+                    <div @click="open = !open;" class="flex items-center cursor-pointer px-3 py-2 text-gray-200 hover:text-gray-600" :class="{'transform rotate-180': open}">
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    </div>
+                </div> --}}
+                </div>
+                <!-- Collapsed content -->
+                <div class="w-full flex flex-col mt-8">
+                    <hr class="mb-10 border-gray-700">
+                    {{-- <p>Komentar Pembaca</p>
+                    <hr class="mb-4 border-gray-700" style="width: 15%">  --}}
+                    <!-- comment -->
+                    <div class="">
+                        <h3 class="mb-4 text-lg font-semibold text-white-900">Komentar Pembaca</h3>
+                    
+                        <div class="space-y-4">
+                    
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-3">
+                            <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="">
+                            </div>
+                            <div class="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
+                            <strong>Sarah</strong> <span class="text-xs text-gray-400">3:34 PM</span>
+                            <p class="text-sm">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                                magna aliquyam erat, sed diam voluptua.
+                            </p>
+                            <div class="mt-4 flex items-center">
+                                <div class="flex -space-x-2 mr-2">
+                                <img class="rounded-full w-6 h-6 border border-white" src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80" alt="">
+                                <img class="rounded-full w-6 h-6 border border-white" src="https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80" alt="">
+                                </div>
+                                <div class="text-sm text-gray-500 font-semibold">
+                                5 Replies
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-3">
+                            <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="">
+                            </div>
+                            <div class="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
+                            <strong>Sarah</strong> <span class="text-xs text-gray-400">3:34 PM</span>
+                            <p class="text-sm">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                                magna aliquyam erat, sed diam voluptua.
+                            </p>
+                            
+                            <h4 class="my-5 uppercase tracking-wide text-gray-400 font-bold text-xs">Replies</h4>
+                    
+                            <div class="space-y-4">
+                                <div class="flex">
+                                <div class="flex-shrink-0 mr-3">
+                                    <img class="mt-3 rounded-full w-6 h-6 sm:w-8 sm:h-8" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="">
+                                </div>
+                                <div class="flex-1 text-gray-800 bg-gray-100 rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
+                                    <strong>Sarah</strong> <span class="text-xs text-gray-400">3:34 PM</span>
+                                    <p class="text-xs sm:text-sm">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                                    magna aliquyam erat, sed diam voluptua.
+                                    </p>
+                                </div>
+                                </div>
+                                <div class="flex">
+                                <div class="flex-shrink-0 mr-3">
+                                    <img class="mt-3 rounded-full w-6 h-6 sm:w-8 sm:h-8" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="">
+                                </div>
+                                <div class="flex-1 text-gray-800 bg-gray-100 rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
+                                    <strong>Sarah</strong> <span class="text-xs text-gray-400">3:34 PM</span>
+                                    <p class="text-xs sm:text-sm">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                                    magna aliquyam erat, sed diam voluptua.
+                                    </p>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Leave Comment -->
+                <section>
+                    <div class="mb-10">
+                        <h3 class="mb-4 mt-14 text-lg font-semibold text-white-900">Tinggalkan Komentar</h3>
+                        <p class="text-sm mb-5">
+                            Anda harus <a href="/register"><b>register</b></a> atau <a href="/login"><b>login</b></a> terlebih dahulu.
+                        </p>                    
+                        <!-- comment form -->
+                        <div class="">
+                            <form class="bg-white rounded-lg px-4 pt-2">
+                                <div class="flex flex-wrap -mx-3 mb-6">
+                                    <h2 class="px-4 pt-3 pb-2 text-gray-800 text-lg"></h2>
+                                    <div class="w-full md:w-full px-3 mb-2 mt-2">
+                                        <textarea class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 text-black font-medium placeholder-gray-700 focus:outline-none focus:bg-white" name="body" placeholder="Type Your Comment" required=""></textarea>
+                                    </div>
+                                    <div class="w-full md:w-full flex items-start md:w-full px-3">
+                                        <div class="flex items-start w-1/2 text-gray-700 px-2 mr-auto">                                            
+                                        </div>
+                                        <div class="-mr-1 mb-5">
+                                            <input type="submit" class="bg-white text-gray-700 font-medium py-1 px-4 border border-gray-400 rounded-lg tracking-wide mr-1 hover:bg-gray-100" value="Post Comment">
+                                        </div>
+                                    </div>                            
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>             
         </section>
     </body>
 </html>

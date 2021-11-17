@@ -42,3 +42,6 @@ Route::get('/story/{id}', [StoryController::class, 'show'])->name('story.show');
 Route::get('/book', function(){
     return view('story-book');
 });
+Route::get('/collection', function(){
+    return view('collection');
+});
