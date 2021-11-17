@@ -137,10 +137,10 @@
                     </a> --}}
                   </div>
                   <div>
-                    <a href="/signin" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
-                      Sign In
+                    <a href="/login" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
+                      Log In
                     </a>
-                    <a href="/signup" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">Sign Up</a>
+                    <a href="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">Register</a>
                   </div>
                 </div>
               </nav>

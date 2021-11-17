@@ -32,11 +32,11 @@
                 @endadmin
                 {{-- @endif --}}
                 {{-- @endif --}}
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('story.index') }}" :active="request()->routeIs('story.index')">
                         {{ __('Stories') }}
                     </x-jet-nav-link>
-                </div>                
+                </div>                 --}}
             </div>
             
             @if (Auth::check())

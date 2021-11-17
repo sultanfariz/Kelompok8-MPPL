@@ -14,8 +14,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $this->authorize('admin');
-        return view('dashboard');
+        $isAdmin = $this->authorize('admin');
+        if ($isAdmin) {
+            return view('dashboard');
+        } else {
+            return redirect('/');
+        }
     }
 
     // /**
