@@ -33,13 +33,29 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
+
+            h2{
+                font-size: 140%;
+                word-spacing: 2px;
+                text-align: left;
+                letter-spacing: 1px;
+            }
+
+            h2:after{
+                display: block;
+                height: 2px;
+                background-color: #e67e22;
+                content: "";
+                width: 200px;
+                margin-top: 15px;
+            }
         </style>        
     </head>
     <body class="antialiased">
         <header>
             <nav class="flex items-center justify-between flex-wrap bg-teal p-6">
                 <div class="flex items-center flex-no-shrink text-white mr-6">
-                  <img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%">
+                  <a href="/home"><img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%"></a>
                 </div>
                 <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                   <div class="text-sm lg:flex-grow">
@@ -53,5 +69,129 @@
                 </div>
               </nav>
         </header>
+        <section>
+          <div class="mr-12 ml-96 mt-14 mb-20 pl-96">
+            <div class="w-full h-10 pl-3 pr-2 bg-white border rounded-full flex justify-between items-center relative">
+              <input type="search" name="search" id="search" placeholder="Search"
+                    class="appearance-none w-full outline-none focus:outline-none active:outline-none"/>
+              <button type="submit" class="ml-1 outline-none focus:outline-none active:outline-none">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    viewBox="0 0 24 24" class="w-6 h-6">
+                  <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </button>
+            </div>
+          <div>
+        </section>
+        <section>
+          <h2 class="ml-12">Koleksi Buku</h2>
+            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                  <div class="flex flex-col py-6">
+                    <div class="flex flex-row py-6">
+                      <div class="max-w-lg mx-auto">
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-10">
+                            <a href="#">
+                                <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                            </a>
+                            <div class="p-5">
+                                <a href="#">
+                                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
+                                </a>
+                                <p class="font-normal text-gray-700 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                                <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="/book">
+                                    Read more
+                                </a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="max-w-lg mx-auto">
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-5">
+                            <a href="#">
+                                <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                            </a>
+                            <div class="p-5">
+                                <a href="#">
+                                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
+                                </a>
+                                <p class="font-normal text-gray-700 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                                <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
+                                    Read more
+                                </a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="max-w-lg mx-auto">
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-5">
+                            <a href="#">
+                                <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                            </a>
+                            <div class="p-5">
+                                <a href="#">
+                                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
+                                </a>
+                                <p class="font-normal text-gray-700 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                                <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
+                                    Read more
+                                </a>
+                            </div>
+                        </div>
+                      </div>                                              
+                    </div>
+                    <div class="flex flex-row py-6">
+                      <div class="max-w-lg mx-auto">
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-10">
+                            <a href="#">
+                                <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                            </a>
+                            <div class="p-5">
+                                <a href="#">
+                                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
+                                </a>
+                                <p class="font-normal text-gray-700 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                                <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="/book">
+                                    Read more
+                                </a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="max-w-lg mx-auto">
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-5">
+                            <a href="#">
+                                <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                            </a>
+                            <div class="p-5">
+                                <a href="#">
+                                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
+                                </a>
+                                <p class="font-normal text-gray-700 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                                <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
+                                    Read more
+                                </a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="max-w-lg mx-auto">
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-5">
+                            <a href="#">
+                                <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                            </a>
+                            <div class="p-5">
+                                <a href="#">
+                                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
+                                </a>
+                                <p class="font-normal text-gray-700 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                                <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
+                                    Read more
+                                </a>
+                            </div>
+                        </div>
+                      </div>                                              
+                    </div>
+                </div>
+              </div>
+            </div>
+        </section>
     </body>
 </html>

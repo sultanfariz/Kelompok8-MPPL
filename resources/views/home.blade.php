@@ -123,7 +123,7 @@
                 <div class="flex items-center flex-no-shrink text-white mr-6">
                   {{-- <svg class="h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
                   <span class="font-semibold text-xl tracking-tight">Tailwind CSS</span> --}}
-                  <img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%">
+                  <a href="/home"><img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%"></a>
                 </div>
                 <div class="block lg:hidden">
                   <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white">
@@ -146,7 +146,7 @@
               </nav>
               <div class="header-text-box"> <!--big background image-->
                 <h1>Give warmth to your child <br> through stories with Dongeng.in</h1>
-                <a class="btn btn-full" href="#">Read More</a>
+                <a class="btn btn-full" href="/collection">Read More</a>
             </div>
         </header>
         <section>
@@ -163,11 +163,11 @@
           <h2>Most Favorite Book</h2>
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                <div class="overflow-hidden border-b border-gray-200 sm:rounded-lg">
                   <div class="flex flex-col py-6">
                     <div class="flex flex-row py-6">
                       <div class="max-w-lg mx-auto">
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-10">
                             <a href="#">
                                 <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                             </a>
@@ -183,7 +183,7 @@
                         </div>
                       </div>
                       <div class="max-w-lg mx-auto">
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-5">
                             <a href="#">
                                 <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                             </a>
@@ -199,7 +199,7 @@
                         </div>
                       </div>
                       <div class="max-w-lg mx-auto">
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 ml-5 mr-5">
                             <a href="#">
                                 <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                             </a>
