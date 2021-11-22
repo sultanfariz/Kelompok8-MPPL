@@ -154,7 +154,7 @@
             <div class="row" style="margin-top: 5%; margin-bottom: 10%">
               <h2>What is Dongeng.in?</h2>
               <p class="long-copy">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Aplikasi yang akan dibuat berupa website kumpulan buku yang dikhususkan untuk anak-anak usia dini atau siswa TK dan siswa PAUD. Dengan aplikasi ini orang tua siswa akan lebih mudah untuk mengakses buku cerita anak-anak yang dapat membantu menunjang sistem pembelajaran bagi anak-anak.
               </p>
             </div>
           </div>          
