@@ -12,10 +12,9 @@ class StoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $stories = Story::all();
-        // return view('story.index', ['stories' => $stories]);
+        $stories = Story::where('title', 'like', '%' . $request->keyword . '%')->get();
         return view('collection', ['stories' => $stories]);
     }
 

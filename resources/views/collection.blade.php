@@ -73,7 +73,7 @@
           <div class="mr-12 ml-96 mt-14 mb-20 pl-96">
             <form class="w-full h-10 pl-3 pr-2 bg-white border rounded-full flex justify-between items-center relative" action="/collection" method="GET">
               {{-- <form action="/search" method="GET"> --}}
-                <input type="search" name="search" id="search" placeholder="Search"
+                <input type="search" name="keyword" id="search" placeholder="Search"
                       class="appearance-none w-full outline-none focus:outline-none active:outline-none"/>
                 <button type="submit" class="ml-1 outline-none focus:outline-none active:outline-none">
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
