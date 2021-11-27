@@ -15,7 +15,7 @@ class StoryController extends Controller
     public function index(Request $request)
     {
         $stories = Story::where('title', 'like', '%' . $request->keyword . '%')->get();
-        return view('collection', ['stories' => $stories]);
+        return view('story.index', ['stories' => $stories]);
     }
 
     /**

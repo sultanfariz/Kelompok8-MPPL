@@ -71,17 +71,15 @@
         </header>
         <section>
           <div class="mr-12 ml-96 mt-14 mb-20 pl-96">
-            <form class="w-full h-10 pl-3 pr-2 bg-white border rounded-full flex justify-between items-center relative" action="/collection" method="GET">
-              {{-- <form action="/search" method="GET"> --}}
+            <form class="w-full h-10 pl-3 pr-2 bg-white border rounded-full flex justify-between items-center relative" action="/story" method="GET">
                 <input type="search" name="keyword" id="search" placeholder="Search"
-                      class="appearance-none w-full outline-none focus:outline-none active:outline-none"/>
+                      class="appearance-none w-full outline-none focus:outline-none active:outline-none" value="{{ request()->keyword }}">
                 <button type="submit" class="ml-1 outline-none focus:outline-none active:outline-none">
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       viewBox="0 0 24 24" class="w-6 h-6">
                     <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                   </svg>
                 </button>
-              {{-- </form> --}}
             </form>
           <div>
         </section>
@@ -99,7 +97,8 @@
                       <div class="max-w-lg mx-auto">
                         <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-10">
                             <a href="#">
-                              <img class="rounded-t-lg" src={{ $story->image }} alt={{ $story->title }}>
+                              {{-- <img class="rounded-t-lg" src={{ $story->image }} alt={{ $story->title }}> --}}
+                              <img class="rounded-t-lg" src="https://drive.google.com/file/d/1xg-UdA89jhqoRqZcAPLmN__kwLpj3HhX/view?usp=sharing" alt={{ $story->title }}>
                             </a>
                             <div class="p-5">
                               <a href="#">

@@ -2141,10 +2141,6 @@ select {
 .ring-opacity-5 {
 	--tw-ring-opacity: 0.05;
 }
-.grayscale {
-	--tw-grayscale: grayscale(100%);
-	filter: var(--tw-filter);
-}
 .filter {
 	filter: var(--tw-filter);
 }
