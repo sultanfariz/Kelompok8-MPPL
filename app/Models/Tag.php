@@ -11,8 +11,8 @@ class Tag extends Model
 
     protected $fillable = ['tag'];
 
-    public function stories()
-    {
-        return $this->hasMany(Story::class);
-    }
+    // public function stories()
+    // {
+    //     return $this->hasMany(Story::class);
+    // }
 }

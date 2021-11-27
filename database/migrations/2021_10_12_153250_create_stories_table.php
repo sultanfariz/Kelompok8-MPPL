@@ -17,10 +17,11 @@ class CreateStoriesTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('body');
+            $table->string('link');
             $table->string('image');
-            $table->string('language');
-            $table->string('like_count')->default(0);
-            $table->string('comment_count')->default(0);
+            // $table->string('language');
+            // $table->string('like_count')->default(0);
+            // $table->string('comment_count')->default(0);
             $table->timestamps();
         });
     }

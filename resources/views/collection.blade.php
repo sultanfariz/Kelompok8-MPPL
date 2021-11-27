@@ -22,10 +22,9 @@
                 font-family: 'Nunito', sans-serif;
             }
             header{
-                background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://images.unsplash.com/photo-1565843248736-8c41e6db117b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2hpbGQlMjBib29rfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+                background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
                 background-size: cover;
                 background-position: center;
-                height: 100vh;
             }
             .header-text-box {
                 position: absolute;
@@ -35,27 +34,10 @@
                 transform: translate(-50%, -50%);
             }
 
-            /* ---- HEADINGS ---- */
-            h1,h2,h3 {
-                font-weight: 300; /*==biar ga bold, soalnya h1 format asalnya bold==*/
-                text-transform: uppercase; /*==biar hurufnya kapital semua==*/
-            }
-
-            h1{
-                margin-top: 0; /*==biar gaada margin atasnya, biar gambar background yg di header bisa memenuhi seluruh lamannya==*/
-                margin-bottom: 20px;
-                color: #fff;
-                font-size: 240%;/*==want everything to be relative, jadi tergantung sama global font sizenya==*/
-                /*====*/
-                word-spacing: 4px; /*==space tiap kata==*/
-                letter-spacing: 1px; /*==space tiap huruf==*/
-            }
-
             h2{
-                font-size: 180%;
+                font-size: 140%;
                 word-spacing: 2px;
-                text-align: center;
-                margin-bottom: 30px;
+                text-align: left;
                 letter-spacing: 1px;
             }
 
@@ -64,56 +46,8 @@
                 height: 2px;
                 background-color: #e67e22;
                 content: "";
-                width: 100px;
-                margin: 0 auto;
-                margin-top: 30px;
-            }
-
-            .long-copy{
-                line-height: 145%; /*==usually between 120%-145%==*/
-                width: 70%;
-                margin-left: 15%;            
-            }
-
-            /* ---- BUTTONS ---- */
-            .btn:link,
-            .btn:visited {
-                display: inline-block; /*==bisa di set panjang sama lebarnya(kotak yang ngebatasin suatu kata)==*/
-                padding: 10px 30px; /*==top-bottom   right-left==*/
-                font-weight: 300;
-                text-decoration: none; /*==biar gaada underlinenya==*/ 
-                border-radius: 200px;
-                transition: background-color 0.2s, border 0.2s, color 0.2s;
-            }
-
-            .btn-full:link,
-            .btn-full:visited {
-                background-color: #e67e22;
-                border: 1px solid #e67e22; /*==biar ukurannya sama kyk sblhnya==*/
-                color: #fff;
-            }
-
-            .btn-ghost:link,
-            .btn-ghost:visited {
-                border: 1px solid #e67e22; /*==sblmnya terlihat lbh besar widht&height itu content+padding+border, biar sama makanya yg btn-full ditambahin border juga==*/
-                color: #e67e22;
-                margin-left: 15px;
-            }
-
-            .btn:hover,
-            .btn:active {
-                background-color: #cf6d17;
-            }
-
-            .btn-full:hover,
-            .btn-full:active {
-                border: 1px solid #cf6d17;
-            }
-
-            .btn-ghost:hover,
-            .btn-ghost:active {
-                border: 1px solid #cf6d17;
-                color: #fff;
+                width: 200px;
+                margin-top: 15px;
             }
         </style>        
     </head>
@@ -121,53 +55,70 @@
         <header>
             <nav class="flex items-center justify-between flex-wrap bg-teal p-6">
                 <div class="flex items-center flex-no-shrink text-white mr-6">
-                  {{-- <svg class="h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
-                  <span class="font-semibold text-xl tracking-tight">Tailwind CSS</span> --}}
                   <a href="/home"><img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%"></a>
-                </div>
-                <div class="block lg:hidden">
-                  <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white">
-                    <svg class="h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-                  </button>
                 </div>
                 <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                   <div class="text-sm lg:flex-grow">
-                    {{-- <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 underline text-white text-teal-lighter hover:text-white mr-4">
-                      Stories
-                    </a> --}}
                   </div>
                   <div>
-                    <a href="/login" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
-                      Log In
+                    <a href="/signin" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
+                      Sign In
                     </a>
-                    <a href="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">Register</a>
+                    <a href="/signup" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">Sign Up</a>
                   </div>
                 </div>
               </nav>
-              <div class="header-text-box"> <!--big background image-->
-                <h1>Give warmth to your child <br> through stories with Dongeng.in</h1>
-                <a class="btn btn-full" href="/collection">Read More</a>
-            </div>
         </header>
         <section>
+          <div class="mr-12 ml-96 mt-14 mb-20 pl-96">
+            <form class="w-full h-10 pl-3 pr-2 bg-white border rounded-full flex justify-between items-center relative" action="/collection" method="GET">
+              {{-- <form action="/search" method="GET"> --}}
+                <input type="search" name="search" id="search" placeholder="Search"
+                      class="appearance-none w-full outline-none focus:outline-none active:outline-none"/>
+                <button type="submit" class="ml-1 outline-none focus:outline-none active:outline-none">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      viewBox="0 0 24 24" class="w-6 h-6">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                </button>
+              {{-- </form> --}}
+            </form>
           <div>
-            <div class="row" style="margin-top: 5%; margin-bottom: 10%">
-              <h2>What is Dongeng.in?</h2>
-              <p class="long-copy">
-                Aplikasi yang akan dibuat berupa website kumpulan buku yang dikhususkan untuk anak-anak usia dini atau siswa TK dan siswa PAUD. Dengan aplikasi ini orang tua siswa akan lebih mudah untuk mengakses buku cerita anak-anak yang dapat membantu menunjang sistem pembelajaran bagi anak-anak.
-              </p>
-            </div>
-          </div>          
         </section>
         <section>
-          <h2>Most Favorite Book</h2>
+          <h2 class="ml-12">Koleksi Buku</h2>
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-              <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+              <div class="py-2 align-middle inline-block min-w-full max-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden border-b border-gray-200 sm:rounded-lg">
                   <div class="flex flex-col py-6">
-                    <div class="flex flex-row py-6">
+                    {{-- <div class="flex flex-row py-6"> --}}
+                    @foreach($stories as $key => $story)
+                      {{-- @if($key%3 == 0)
+                        <div class="flex flex-row py-6">
+                      @endif --}}
                       <div class="max-w-lg mx-auto">
                         <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-10">
+                            <a href="#">
+                              <img class="rounded-t-lg" src={{ $story->image }} alt={{ $story->title }}>
+                            </a>
+                            <div class="p-5">
+                              <a href="#">
+                                <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">{{ $story->title }}</h5>
+                              </a>
+                              <p class="font-normal text-gray-700 mb-3">{{ $story->excerpt() }}</p>
+                              <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="/book">
+                                Read more
+                              </a>
+                            </div>
+                        </div>
+                      {{-- @if($key%3 == 0)
+                        </div>
+                      @endif --}}
+                      </div>
+                      @endforeach
+                      {{-- <div class="flex flex-row py-6">
+                        <div class="max-w-lg mx-auto">
+                          <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-10">
                             <a href="#">
                                 <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                             </a>
@@ -199,7 +150,7 @@
                         </div>
                       </div>
                       <div class="max-w-lg mx-auto">
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 ml-5 mr-5">
+                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-5">
                             <a href="#">
                                 <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                             </a>
@@ -213,8 +164,9 @@
                                 </a>
                             </div>
                         </div>
-                      </div>                                              
-                  </div>
+                      </div>  --}}
+                      {{-- @endforeach                                              --}}
+                    {{-- </div> --}}
                 </div>
               </div>
             </div>
