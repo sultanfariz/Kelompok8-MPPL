@@ -71,27 +71,54 @@
         </header>
         <section>
           <div class="mr-12 ml-96 mt-14 mb-20 pl-96">
-            <div class="w-full h-10 pl-3 pr-2 bg-white border rounded-full flex justify-between items-center relative">
-              <input type="search" name="search" id="search" placeholder="Search"
-                    class="appearance-none w-full outline-none focus:outline-none active:outline-none"/>
-              <button type="submit" class="ml-1 outline-none focus:outline-none active:outline-none">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    viewBox="0 0 24 24" class="w-6 h-6">
-                  <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-              </button>
-            </div>
+            <form class="w-full h-10 pl-3 pr-2 bg-white border rounded-full flex justify-between items-center relative" action="/collection" method="GET">
+              {{-- <form action="/search" method="GET"> --}}
+                <input type="search" name="search" id="search" placeholder="Search"
+                      class="appearance-none w-full outline-none focus:outline-none active:outline-none"/>
+                <button type="submit" class="ml-1 outline-none focus:outline-none active:outline-none">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      viewBox="0 0 24 24" class="w-6 h-6">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                </button>
+              {{-- </form> --}}
+            </form>
           <div>
         </section>
         <section>
           <h2 class="ml-12">Koleksi Buku</h2>
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-              <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+              <div class="py-2 align-middle inline-block min-w-full max-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden border-b border-gray-200 sm:rounded-lg">
                   <div class="flex flex-col py-6">
-                    <div class="flex flex-row py-6">
+                    {{-- <div class="flex flex-row py-6"> --}}
+                    @foreach($stories as $key => $story)
+                      {{-- @if($key%3 == 0)
+                        <div class="flex flex-row py-6">
+                      @endif --}}
                       <div class="max-w-lg mx-auto">
                         <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-10">
+                            <a href="#">
+                              <img class="rounded-t-lg" src={{ $story->image }} alt={{ $story->title }}>
+                            </a>
+                            <div class="p-5">
+                              <a href="#">
+                                <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">{{ $story->title }}</h5>
+                              </a>
+                              <p class="font-normal text-gray-700 mb-3">{{ $story->excerpt() }}</p>
+                              <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="/book">
+                                Read more
+                              </a>
+                            </div>
+                        </div>
+                      {{-- @if($key%3 == 0)
+                        </div>
+                      @endif --}}
+                      </div>
+                      @endforeach
+                      {{-- <div class="flex flex-row py-6">
+                        <div class="max-w-lg mx-auto">
+                          <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-10">
                             <a href="#">
                                 <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                             </a>
@@ -137,58 +164,9 @@
                                 </a>
                             </div>
                         </div>
-                      </div>                                              
-                    </div>
-                    <div class="flex flex-row py-6">
-                      <div class="max-w-lg mx-auto">
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-10">
-                            <a href="#">
-                                <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
-                                </a>
-                                <p class="font-normal text-gray-700 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                                <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="/book">
-                                    Read more
-                                </a>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="max-w-lg mx-auto">
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-5">
-                            <a href="#">
-                                <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
-                                </a>
-                                <p class="font-normal text-gray-700 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                                <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
-                                    Read more
-                                </a>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="max-w-lg mx-auto">
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-5">
-                            <a href="#">
-                                <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
-                                </a>
-                                <p class="font-normal text-gray-700 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                                <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
-                                    Read more
-                                </a>
-                            </div>
-                        </div>
-                      </div>                                              
-                    </div>
+                      </div>  --}}
+                      {{-- @endforeach                                              --}}
+                    {{-- </div> --}}
                 </div>
               </div>
             </div>

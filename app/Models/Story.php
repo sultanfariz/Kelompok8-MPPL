@@ -12,14 +12,17 @@ class Story extends Model
 
     use HasFactory;
 
+    // protected $fillable = [
+    //     'title', 'body', 'image', 'language', 'like_count', 'comment_count'
+    // ];
     protected $fillable = [
-        'title', 'body', 'image', 'language', 'like_count', 'comment_count'
+        'title', 'body', 'image', 'link'
     ];
 
-    public function tags()
-    {
-        return $this->belongsToMany(Tag::class);
-    }
+    // public function tags()
+    // {
+    //     return $this->belongsToMany(Tag::class);
+    // }
 
     public function excerpt()
     {
