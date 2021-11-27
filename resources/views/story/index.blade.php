@@ -96,9 +96,8 @@
                       @endif --}}
                       <div class="max-w-lg mx-auto">
                         <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-10">
-                            <a href="#">
-                              {{-- <img class="rounded-t-lg" src={{ $story->image }} alt={{ $story->title }}> --}}
-                              <img class="rounded-t-lg" src="https://drive.google.com/file/d/1xg-UdA89jhqoRqZcAPLmN__kwLpj3HhX/view?usp=sharing" alt={{ $story->title }}>
+                            <a href="/book/{{ $story->id }}">
+                              <img class="rounded-t-lg" src={{ $story->image }} alt={{ $story->title }}>
                             </a>
                             <div class="p-5">
                               <a href="#">
