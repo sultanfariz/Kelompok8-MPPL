@@ -56,7 +56,6 @@
         <section>
             <div class="m-8 p-6 rounded" x-data="{open: false}">
                 <iframe class="flex items-center justify-between flex-wrap bg-teal p-6" style="width:100%;height:700px" src={{ $story->link }}  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
-                {{-- <iframe class="flex items-center justify-between flex-wrap bg-teal p-6" style="width:100%;height:700px" src="https://online.fliphtml5.com/ikmgs/yhfv/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe> --}}
                 <hr class="mb-4 border-gray-700">
                 <div class="flex items-center">
                 <img class="w-auto h-20 mr-4" src="img/book-vector.png">
@@ -68,19 +67,16 @@
                 </div>
                 </div>
                 <!-- Collapsed content -->
-                @if (Auth::check())
                 <div class="w-full flex flex-col mt-8">
                     <hr class="mb-10 border-gray-700">
                     <div class="">
                         <h3 class="mb-4 text-lg font-semibold text-white-900">Komentar Pembaca</h3>
-                    
+                        
                         <div class="space-y-4">
                             
                         @foreach ($comments as $comment)
                         <div class="flex">
-                        {{-- <div class="flex items-center"> --}}
                             <div class="flex-shrink-0 mr-3">
-                            {{-- <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt=""> --}}
                             </div>
                             <div class="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
                                 <strong>{{ $comment->user->fullname}}</strong> <span class="text-xs text-gray-500">{{ $comment->created_at->diffForHumans() }}</span>
@@ -100,6 +96,7 @@
                             Anda harus <a href="/register"><b>register</b></a> atau <a href="/login"><b>login</b></a> terlebih dahulu.
                         </p>                    
                         <!-- comment form -->
+                        @if (Auth::check())
                         <div class="">
                             <form class="bg-white rounded-lg px-4 pt-2" action="/story/{{ $story->id }}/comment" method="POST">
                             {{-- <form class="bg-white rounded-lg px-4 pt-2"> --}}
@@ -119,9 +116,9 @@
                                 </div>
                             </form>
                         </div>
+                        @endif
                     </div>
                 </section>
-                @endif
             </div>             
         </section>
     </body>

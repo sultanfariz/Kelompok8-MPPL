@@ -25,6 +25,7 @@ class StoryController extends Controller
      */
     public function create()
     {
+        // $this->authorize('admin');
         return view('story.create');
     }
 
@@ -37,23 +38,23 @@ class StoryController extends Controller
     public function store(Request $request)
     {
         $this->authorize('admin');
-
-        $validatedData = request()->validate([
+        
+        $validatedData = $request->validate([
             'title' => 'required|max:255',
-            'body' => 'required|min:50',
+            'body' => 'required|min:20',
+            'link' => 'required|url',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'language' => 'required|max:3',
         ]);
-
+        
         $story = new Story();
         $story->title = $validatedData['title'];
         $story->body = $validatedData['body'];
-        $story->language = $validatedData['language'];
+        $story->link = $validatedData['link'];
 
         $image = $validatedData['image'];
         $imageName = time() . '_' . $image->getClientOriginalExtension();
-        $image->move(public_path('images'), $imageName);
-        $story->image = $imageName;
+        $image->move(public_path('storage'), $imageName);
+        $story->image = 'storage/' . $imageName;
 
         $story->save();
 

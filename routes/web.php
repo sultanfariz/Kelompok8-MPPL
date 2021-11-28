@@ -25,14 +25,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [AdminControl
 // User Routes
 Route::get('/', function(){
     return view('home');
-});
-Route::get('/home', function(){
-    return view('home');
-});
+})->name('home');
+// Route::get('/home', function(){
+//     return view('home');
+// });
 
 Route::get('/story', [StoryController::class, 'index'])->name('story.index');
-Route::get('/story/create', [StoryController::class, 'create'])->name('story.create');
-Route::post('/story', [StoryController::class, 'store'])->name('story.store');
+Route::middleware(['auth:sanctum', 'verified'])->get('/story/create', [StoryController::class, 'create'])->name('story.create');
+Route::middleware(['auth:sanctum', 'verified'])->post('/story', [StoryController::class, 'store'])->name('story.store');
 Route::get('/story/{id}', [StoryController::class, 'show'])->name('story.show');
 
 Route::post('/story/{id}/comment', [CommentController::class, 'store'])->name('comment.store');
