@@ -143,13 +143,13 @@
                     <a href="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">
                       Sign up
                     </a>
-                    <a href="/logout" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
+                    {{-- <a href="/logout" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
                       Log out
                     </a>
                     <a href="/user/profile" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">
                       <i class="fas fa-user text-white"></i>
                       Profile
-                    </a>
+                    </a> --}}
                   </div>
                 </div>
               </nav>
