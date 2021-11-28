@@ -61,10 +61,10 @@
                   <div class="text-sm lg:flex-grow">
                   </div>
                   <div>
-                    <a href="/signin" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
+                    <a href="/login" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
                       Sign In
                     </a>
-                    <a href="/signup" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">Sign Up</a>
+                    <a href="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">Sign Up</a>
                   </div>
                 </div>
               </nav>
@@ -72,6 +72,7 @@
         <section>
           <div class="mr-12 ml-96 mt-14 mb-20 pl-96">
             <form class="w-full h-10 pl-3 pr-2 bg-white border rounded-full flex justify-between items-center relative" action="/story" method="GET">
+              @csrf
                 <input type="search" name="keyword" id="search" placeholder="Search"
                       class="appearance-none w-full outline-none focus:outline-none active:outline-none" value="{{ request()->keyword }}">
                 <button type="submit" class="ml-1 outline-none focus:outline-none active:outline-none">

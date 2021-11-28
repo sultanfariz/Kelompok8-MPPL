@@ -69,7 +69,8 @@ class StoryController extends Controller
     public function show($id)
     {
         $story = Story::find($id);
-        return view('story.show', ['story' => $story]);
+        $comments = $story->comments;
+        return view('story.show', ['story' => $story, 'comments' => $comments]);
     }
 
     /**

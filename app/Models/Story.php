@@ -28,4 +28,9 @@ class Story extends Model
     {
         return Str::limit($this->body, Story::EXCERPT_LENGTH);
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

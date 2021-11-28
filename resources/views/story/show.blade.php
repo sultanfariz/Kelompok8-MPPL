@@ -45,35 +45,14 @@
                   <div class="text-sm lg:flex-grow">
                   </div>
                   <div>
-                    <a href="/signin" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
+                    <a href="/login" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
                       Sign In
                     </a>
-                    <a href="/signup" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">Sign Up</a>
+                    <a href="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">Sign Up</a>
                   </div>
                 </div>
               </nav>
         </header>
-        {{-- <section>
-            <iframe class="flex items-center justify-between flex-wrap bg-teal p-6" style="width:100%;height:700px" src="https://online.fliphtml5.com/ikmgs/yhfv/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
-        </section>
-        <section>
-            <div class="flex flex-row p-2 font-sans">
-                <h2 class="font-bold ml-4 mr-32">
-                    Judul
-                </h2> :
-                <p class="mx-4">
-                    Si Kancil yang Jujur
-                </p>
-            </div>
-            <div class="flex flex-row p-2 font-sans">
-                <h2 class="font-bold ml-4 mr-10">
-                    Deskripsi Singkat
-                </h2> :
-                <p class="mx-4">
-                    Cerita ini tentang Kancil yang cerdik. Dapat mengajarkan pada anak bahwa dengan menjadi jujur akan mendapatkan kebahagiaan.
-                </p>
-            </div>           
-        </section> --}}
         <section>
             <div class="m-8 p-6 rounded" x-data="{open: false}">
                 <iframe class="flex items-center justify-between flex-wrap bg-teal p-6" style="width:100%;height:700px" src={{ $story->link }}  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
@@ -89,84 +68,28 @@
                 </div>
                 </div>
                 <!-- Collapsed content -->
+                @if (Auth::check())
                 <div class="w-full flex flex-col mt-8">
                     <hr class="mb-10 border-gray-700">
-                    {{-- <p>Komentar Pembaca</p>
-                    <hr class="mb-4 border-gray-700" style="width: 15%">  --}}
-                    <!-- comment -->
                     <div class="">
                         <h3 class="mb-4 text-lg font-semibold text-white-900">Komentar Pembaca</h3>
                     
                         <div class="space-y-4">
-                    
-                        <div class="flex">
-                            <div class="flex-shrink-0 mr-3">
-                            <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="">
-                            </div>
-                            <div class="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
-                            <strong>Sarah</strong> <span class="text-xs text-gray-500">3:34 PM</span>
-                            <p class="text-sm">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                magna aliquyam erat, sed diam voluptua.
-                            </p>
-                            <div class="mt-4 flex items-center">
-                                <div class="flex -space-x-2 mr-2">
-                                <img class="rounded-full w-6 h-6 border border-white" src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80" alt="">
-                                <img class="rounded-full w-6 h-6 border border-white" src="https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80" alt="">
-                                </div>
-                                <div class="text-sm text-gray-600 font-semibold">
-                                5 Replies
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    
-                        <div class="flex">
-                            <div class="flex-shrink-0 mr-3">
-                            <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="">
-                            </div>
-                            <div class="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
-                            <strong>Sarah</strong> <span class="text-xs text-gray-500">3:34 PM</span>
-                            <p class="text-sm">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                magna aliquyam erat, sed diam voluptua.
-                            </p>
                             
-                            <h4 class="my-5 uppercase tracking-wide text-gray-600 font-bold text-xs">Replies</h4>
-                    
-                            <div class="space-y-4">
-                                <div class="flex">
-                                <div class="flex-shrink-0 mr-3">
-                                    <img class="mt-3 rounded-full w-6 h-6 sm:w-8 sm:h-8" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="">
-                                </div>
-                                <div class="flex-1 text-gray-800 bg-gray-100 rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
-                                    <strong>Sarah</strong> <span class="text-xs text-gray-500">3:34 PM</span>
-                                    <p class="text-xs sm:text-sm">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                    magna aliquyam erat, sed diam voluptua.
-                                    </p>
-                                </div>
-                                </div>
-                                <div class="flex">
-                                <div class="flex-shrink-0 mr-3">
-                                    <img class="mt-3 rounded-full w-6 h-6 sm:w-8 sm:h-8" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="">
-                                </div>
-                                <div class="flex-1 text-gray-800 bg-gray-100 rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
-                                    <strong>Sarah</strong> <span class="text-xs text-gray-500">3:34 PM</span>
-                                    <p class="text-xs sm:text-sm">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                    magna aliquyam erat, sed diam voluptua.
-                                    </p>
-                                </div>
-                                </div>
+                        @foreach ($comments as $comment)
+                        <div class="flex">
+                        {{-- <div class="flex items-center"> --}}
+                            <div class="flex-shrink-0 mr-3">
+                            {{-- <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt=""> --}}
                             </div>
+                            <div class="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
+                                <strong>{{ $comment->user->fullname}}</strong> <span class="text-xs text-gray-500">{{ $comment->created_at->diffForHumans() }}</span>
+                                <p class="text-sm">
+                                    {{ $comment->body }}
+                                </p>
                             </div>
                         </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <!-- Leave Comment -->
@@ -178,7 +101,9 @@
                         </p>                    
                         <!-- comment form -->
                         <div class="">
-                            <form class="bg-white rounded-lg px-4 pt-2">
+                            <form class="bg-white rounded-lg px-4 pt-2" action="/story/{{ $story->id }}/comment" method="POST">
+                            {{-- <form class="bg-white rounded-lg px-4 pt-2"> --}}
+                                @csrf
                                 <div class="flex flex-wrap -mx-3 mb-6">
                                     <h2 class="px-4 pt-3 pb-2 text-gray-800 text-lg"></h2>
                                     <div class="w-full md:w-full px-3 mb-2 mt-2">
@@ -196,6 +121,7 @@
                         </div>
                     </div>
                 </section>
+                @endif
             </div>             
         </section>
     </body>

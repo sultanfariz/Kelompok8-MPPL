@@ -35,7 +35,20 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'body' => 'required|string|max:500',
+        ]);
+
+        $comment = new Comment();
+        $comment->user_id = auth()->user()->id;
+        $comment->story_id = $request->route('id');
+        $comment->body = $validatedData['body'];
+
+        $comment->save();
+
+        dd($comment);
+
+        return redirect()->back();
     }
 
     /**

@@ -146,7 +146,7 @@
               </nav>
               <div class="header-text-box"> <!--big background image-->
                 <h1>Give warmth to your child <br> through stories with Dongeng.in</h1>
-                <a class="btn btn-full" href="/collection">Read More</a>
+                <a class="btn btn-full" href="/story">Read More</a>
             </div>
         </header>
         <section>
