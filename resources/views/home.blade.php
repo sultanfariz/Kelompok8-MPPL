@@ -138,9 +138,18 @@
                   </div>
                   <div>
                     <a href="/login" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
-                      Log In
+                      Sign In
                     </a>
-                    <a href="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">Register</a>
+                    <a href="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">
+                      Sign up
+                    </a>
+                    <a href="/logout" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
+                      Log out
+                    </a>
+                    <a href="/user/profile" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">
+                      <i class="fas fa-user text-white"></i>
+                      Profile
+                    </a>
                   </div>
                 </div>
               </nav>
@@ -152,7 +161,7 @@
         <section>
           <div>
             <div class="row" style="margin-top: 5%; margin-bottom: 10%">
-              <h2>What is Dongeng.in?</h2>
+              <h2>Apa itu Dongeng.in?</h2>
               <p class="long-copy">
                 Aplikasi yang akan dibuat berupa website kumpulan buku yang dikhususkan untuk anak-anak usia dini atau siswa TK dan siswa PAUD. Dengan aplikasi ini orang tua siswa akan lebih mudah untuk mengakses buku cerita anak-anak yang dapat membantu menunjang sistem pembelajaran bagi anak-anak.
               </p>
@@ -160,64 +169,48 @@
           </div>          
         </section>
         <section>
-          <h2>Most Favorite Book</h2>
-            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-              <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                <div class="overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                  <div class="flex flex-col py-6">
-                    <div class="flex flex-row py-6">
-                      <div class="max-w-lg mx-auto">
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-10">
-                            <a href="#">
-                                <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
-                                </a>
-                                <p class="font-normal text-gray-700 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                                <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="/book">
-                                    Read more
-                                </a>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="max-w-lg mx-auto">
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-5">
-                            <a href="#">
-                                <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
-                                </a>
-                                <p class="font-normal text-gray-700 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                                <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
-                                    Read more
-                                </a>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="max-w-lg mx-auto">
-                        <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 ml-5 mr-5">
-                            <a href="#">
-                                <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Noteworthy technology acquisitions 2021</h5>
-                                </a>
-                                <p class="font-normal text-gray-700 mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                                <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
-                                    Read more
-                                </a>
-                            </div>
-                        </div>
-                      </div>                                              
-                  </div>
-                </div>
+          <h2>Buku Terfavorit</h2>
+            
+          <div class=" px-100 grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3" style="padding: 0px 20px">
+            <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
+              <a href="#">
+                  <img class="rounded-t-lg"
+                      src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+              </a>
+              <div class="p-5">
+                  <a href="#">
+                      <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">
+                          Noteworthy technology acquisitions 2021</h5>
+                  </a>
+                  <p class="font-normal text-gray-700 mb-3">Here are the biggest
+                      enterprise technology acquisitions of 2021 so far, in reverse
+                      chronological order.</p>
+                  <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
+                      href="#">
+                      Read more
+                  </a>
               </div>
             </div>
+            <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
+              <a href="#">
+                  <img class="rounded-t-lg"
+                      src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+              </a>
+              <div class="p-5">
+                  <a href="#">
+                      <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">
+                          Noteworthy technology acquisitions 2021</h5>
+                  </a>
+                  <p class="font-normal text-gray-700 mb-3">Here are the biggest
+                      enterprise technology acquisitions of 2021 so far, in reverse
+                      chronological order.</p>
+                  <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
+                      href="#">
+                      Read more
+                  </a>
+              </div>
+            </div>
+          </div>
         </section>
     </body>
 </html>

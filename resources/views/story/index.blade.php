@@ -90,6 +90,7 @@
               <div class="py-2 align-middle inline-block min-w-full max-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden border-b border-gray-200 sm:rounded-lg">
                   <div class="flex flex-col py-6">
+                    <div class=" px-100 grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3" style="padding: 0px 20px">
                     {{-- <div class="flex flex-row py-6"> --}}
                     @foreach($stories as $key => $story)
                       {{-- @if($key%3 == 0)
@@ -117,6 +118,7 @@
                       @endforeach
                       {{-- @endforeach                                              --}}
                     {{-- </div> --}}
+                    </div>
                 </div>
               </div>
             </div>
