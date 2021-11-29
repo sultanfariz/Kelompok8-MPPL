@@ -34,5 +34,7 @@ Route::get('/story', [StoryController::class, 'index'])->name('story.index');
 Route::middleware(['auth:sanctum', 'verified'])->get('/story/create', [StoryController::class, 'create'])->name('story.create');
 Route::middleware(['auth:sanctum', 'verified'])->post('/story', [StoryController::class, 'store'])->name('story.store');
 Route::get('/story/{id}', [StoryController::class, 'show'])->name('story.show');
+Route::middleware(['auth:sanctum', 'verified'])->get('/story/{id}/edit', [StoryController::class, 'edit'])->name('story.edit');
+Route::middleware(['auth:sanctum', 'verified'])->post('/story/{id}', [StoryController::class, 'update'])->name('story.update');
 
-Route::post('/story/{id}/comment', [CommentController::class, 'store'])->name('comment.store');
+Route::middleware(['auth:sanctum', 'verified'])->post('/story/{id}/comment', [CommentController::class, 'store'])->name('comment.store');

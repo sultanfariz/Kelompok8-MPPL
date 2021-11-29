@@ -55,7 +55,7 @@
         <header>
             <nav class="flex items-center justify-between flex-wrap bg-teal p-6">
                 <div class="flex items-center flex-no-shrink text-white mr-6">
-                  <a href="/home"><img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%"></a>
+                  <a href="/"><img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%"></a>
                 </div>
                 <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                   <div class="text-sm lg:flex-grow">
@@ -81,7 +81,6 @@
         <section>
           <div class="mr-12 ml-96 mt-14 mb-20 pl-96">
             <form class="w-full h-10 pl-3 pr-2 bg-white border rounded-full flex justify-between items-center relative" action="/story" method="GET">
-              @csrf
                 <input type="search" name="keyword" id="search" placeholder="Search"
                       class="appearance-none w-full outline-none focus:outline-none active:outline-none" value="{{ request()->keyword }}">
                 <button type="submit" class="ml-1 outline-none focus:outline-none active:outline-none">

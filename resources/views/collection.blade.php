@@ -55,7 +55,7 @@
         <header>
             <nav class="flex items-center justify-between flex-wrap bg-teal p-6">
                 <div class="flex items-center flex-no-shrink text-white mr-6">
-                  <a href="/home"><img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%"></a>
+                  <a href="/"><img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%"></a>
                 </div>
                 <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                   <div class="text-sm lg:flex-grow">

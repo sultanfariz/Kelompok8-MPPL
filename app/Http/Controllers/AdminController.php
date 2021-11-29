@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use App\Models\Story;
 
 class AdminController extends Controller
 {
@@ -16,7 +17,8 @@ class AdminController extends Controller
     {
         $isAdmin = $this->authorize('admin');
         if ($isAdmin) {
-            return view('dashboard');
+            $stories = Story::all();
+            return view('dashboard', ['stories' => $stories]);
         } else {
             return redirect('/');
         }

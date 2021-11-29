@@ -45,7 +45,7 @@
             </div>
             <div class="w-full py-6 z-20">
                 <h1 class="my-6">
-                    <a href="/home"><img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%"></a>
+                    <a href="/"><img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%"></a>
                 </h1>
                 <div class="py-6 space-x-2">
                 </div>
