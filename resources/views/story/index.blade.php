@@ -55,16 +55,38 @@
         <header>
             <nav class="flex items-center justify-between flex-wrap bg-teal p-6">
                 <div class="flex items-center flex-no-shrink text-white mr-6">
-                  <a href="/home"><img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%"></a>
+                  <a href="/"><img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%"></a>
+                  @admin
+                    <a href="{{ route('dashboard') }}" class="text-l">Dashboard</a>
+                  @endadmin
                 </div>
                 <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                   <div class="text-sm lg:flex-grow">
                   </div>
                   <div>
+                    @if(Auth::check())
+                        <div class="flex items-center">
+                        <form method="POST" action="{{ route('logout') }}" class="rounded text-white border-white mt-4">
+                          @csrf
+                          <a href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                          this.closest('form').submit();" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
+                              {{ __('Log Out') }}
+                            </a>
+                          </form>
+                        <a href="/user/profile" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">
+                          <i class="fas fa-user text-white"></i>
+                          Profile
+                        </a>
+                      </div>
+                    @else
                     <a href="/login" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
                       Sign In
                     </a>
-                    <a href="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">Sign Up</a>
+                    <a href="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">
+                      Sign Up
+                    </a>
+                    @endif
                   </div>
                 </div>
               </nav>
@@ -72,7 +94,6 @@
         <section>
           <div class="mr-12 ml-96 mt-14 mb-20 pl-96">
             <form class="w-full h-10 pl-3 pr-2 bg-white border rounded-full flex justify-between items-center relative" action="/story" method="GET">
-              @csrf
                 <input type="search" name="keyword" id="search" placeholder="Search"
                       class="appearance-none w-full outline-none focus:outline-none active:outline-none" value="{{ request()->keyword }}">
                 <button type="submit" class="ml-1 outline-none focus:outline-none active:outline-none">
@@ -90,11 +111,8 @@
               <div class="py-2 align-middle inline-block min-w-full max-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden border-b border-gray-200 sm:rounded-lg">
                   <div class="flex flex-col py-6">
-                    {{-- <div class="flex flex-row py-6"> --}}
+                    <div class=" px-100 grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3" style="padding: 0px 20px">
                     @foreach($stories as $key => $story)
-                      {{-- @if($key%3 == 0)
-                        <div class="flex flex-row py-6">
-                      @endif --}}
                       <div class="max-w-lg mx-auto">
                         <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mr-5 ml-10">
                             <a href="/story/{{ $story->id }}">
@@ -105,18 +123,14 @@
                                 <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">{{ $story->title }}</h5>
                               </a>
                               <p class="font-normal text-gray-700 mb-3">{{ $story->excerpt() }}</p>
-                              <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="/story/{{ $story->id }}">
+                              <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href={{ route('story.show', $story->id) }}>
                                 Read more
                               </a>
                             </div>
                         </div>
-                      {{-- @if($key%3 == 0)
-                        </div>
-                      @endif --}}
                       </div>
                       @endforeach
-                      {{-- @endforeach                                              --}}
-                    {{-- </div> --}}
+                    </div>
                 </div>
               </div>
             </div>

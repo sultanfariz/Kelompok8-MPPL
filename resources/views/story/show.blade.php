@@ -39,16 +39,38 @@
         <header>
             <nav class="flex items-center justify-between flex-wrap bg-teal p-6">
                 <div class="flex items-center flex-no-shrink text-white mr-6">
-                    <a href="/home"><img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%"></a>
+                    <a href="/"><img src="img/logo-white.png" alt="Dongeng.in" style="width: 60%"></a>
+                    @admin
+                        <a href="{{ route('dashboard') }}" class="text-l">Dashboard</a>
+                    @endadmin
                 </div>
                 <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                   <div class="text-sm lg:flex-grow">
                   </div>
                   <div>
+                    @if(Auth::check())
+                        <div class="flex items-center">
+                        <form method="POST" action="{{ route('logout') }}" class="rounded text-white border-white mt-4">
+                          @csrf
+                          <a href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                          this.closest('form').submit();" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
+                              {{ __('Log Out') }}
+                            </a>
+                          </form>
+                        <a href="/user/profile" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">
+                          <i class="fas fa-user text-white"></i>
+                          Profile
+                        </a>
+                      </div>
+                    @else
                     <a href="/login" class="inline-block text-sm px-4 py-2 text-lighter text-white hover:underline">
                       Sign In
                     </a>
-                    <a href="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">Sign Up</a>
+                    <a href="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0">
+                      Sign Up
+                    </a>
+                    @endif
                   </div>
                 </div>
               </nav>
@@ -56,7 +78,6 @@
         <section>
             <div class="m-8 p-6 rounded" x-data="{open: false}">
                 <iframe class="flex items-center justify-between flex-wrap bg-teal p-6" style="width:100%;height:700px" src={{ $story->link }}  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
-                {{-- <iframe class="flex items-center justify-between flex-wrap bg-teal p-6" style="width:100%;height:700px" src="https://online.fliphtml5.com/ikmgs/yhfv/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe> --}}
                 <hr class="mb-4 border-gray-700">
                 <div class="flex items-center">
                 <img class="w-auto h-20 mr-4" src="img/book-vector.png">
@@ -68,19 +89,16 @@
                 </div>
                 </div>
                 <!-- Collapsed content -->
-                @if (Auth::check())
                 <div class="w-full flex flex-col mt-8">
                     <hr class="mb-10 border-gray-700">
                     <div class="">
                         <h3 class="mb-4 text-lg font-semibold text-white-900">Komentar Pembaca</h3>
-                    
+                        
                         <div class="space-y-4">
                             
                         @foreach ($comments as $comment)
                         <div class="flex">
-                        {{-- <div class="flex items-center"> --}}
                             <div class="flex-shrink-0 mr-3">
-                            {{-- <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt=""> --}}
                             </div>
                             <div class="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
                                 <strong>{{ $comment->user->fullname}}</strong> <span class="text-xs text-gray-500">{{ $comment->created_at->diffForHumans() }}</span>
@@ -96,16 +114,13 @@
                 <section>
                     <div class="mb-10">
                         <h3 class="mb-4 mt-14 text-lg font-semibold text-white-900">Tinggalkan Komentar</h3>
-                        <p class="text-sm mb-5">
-                            Anda harus <a href="/register"><b>register</b></a> atau <a href="/login"><b>login</b></a> terlebih dahulu.
-                        </p>                    
                         <!-- comment form -->
+                        @if (Auth::check())
                         <div class="">
                             <form class="bg-white rounded-lg px-4 pt-2" action="/story/{{ $story->id }}/comment" method="POST">
-                            {{-- <form class="bg-white rounded-lg px-4 pt-2"> --}}
-                                @csrf
-                                <div class="flex flex-wrap -mx-3 mb-6">
-                                    <h2 class="px-4 pt-3 pb-2 text-gray-800 text-lg"></h2>
+                                    @csrf
+                                    <div class="flex flex-wrap -mx-3 mb-6">
+                                        <h2 class="px-4 pt-3 pb-2 text-gray-800 text-lg"></h2>
                                     <div class="w-full md:w-full px-3 mb-2 mt-2">
                                         <textarea class="rounded border border-gray-500 leading-normal resize-none w-full h-20 py-2 px-3 text-black font-medium placeholder-gray-700 focus:outline-none focus:bg-white" name="body" placeholder="Type Your Comment" required=""></textarea>
                                     </div>
@@ -119,9 +134,13 @@
                                 </div>
                             </form>
                         </div>
+                        @else
+                        <p class="text-sm mb-5">
+                            Anda harus <a href="/register"><b>register</b></a> atau <a href="/login"><b>login</b></a> terlebih dahulu.
+                        </p>                    
+                        @endif
                     </div>
                 </section>
-                @endif
             </div>             
         </section>
     </body>

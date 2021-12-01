@@ -9,11 +9,12 @@
                 {{-- @if (Session::get('isAdmin', 0)) --}}
                 <div class="flex-shrink-0 flex items-center">
                     <a href="
-                    @admin
+                    {{ route('home') }}
+                    {{-- @admin
                         {{ route('dashboard') }}
                     @else
-                        {{ route('story.index') }}
-                    @endadmin
+                        {{ route('home') }}
+                    @endadmin --}}
                     ">
                         <x-jet-application-mark class="block h-9 w-auto" />
                     </a>
@@ -29,14 +30,14 @@
                             {{ __('Dashboard') }}
                         </x-jet-nav-link>
                     </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('story.create') }}" :active="request()->routeIs('story.create')">
+                            {{ __('Insert Story') }}
+                        </x-jet-nav-link>
+                    </div>                
                 @endadmin
                 {{-- @endif --}}
                 {{-- @endif --}}
-                {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('story.index') }}" :active="request()->routeIs('story.index')">
-                        {{ __('Stories') }}
-                    </x-jet-nav-link>
-                </div>                 --}}
             </div>
             
             @if (Auth::check())
