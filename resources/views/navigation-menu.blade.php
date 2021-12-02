@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-gray-800 border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -16,7 +16,10 @@
                         {{ route('home') }}
                     @endadmin --}}
                     ">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        {{-- <x-jet-application-mark class="block h-9 w-auto" /> --}}
+                        <div class="flex items-center flex-no-shrink text-white mr-6">
+                            <a href="/"><img src="https://i.ibb.co/drcFXTH/dongeng-in-putih-1-1.png" alt="Dongeng.in" style="width: 50%"></a>
+                        </div>
                     </a>
                 </div>
                 {{-- @endif --}}
