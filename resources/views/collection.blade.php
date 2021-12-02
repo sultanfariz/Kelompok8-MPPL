@@ -86,7 +86,7 @@
           <div>
         </section>
         <section>
-          <h2 class="ml-12">Koleksi Buk</h2>
+          <h2 class="ml-12">Koleksi Buku</h2>
           @foreach($stories as $key => $story)
           <div class=" px-100 grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3" style="padding: 0px 20px">
             
