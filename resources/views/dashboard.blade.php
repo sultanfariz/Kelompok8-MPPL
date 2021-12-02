@@ -33,7 +33,9 @@
                         </script>
 
                          <button class="p-2 pl-5 pr-5 mb-5 bg-transparent border-2 border-blue-500 text-blue-500 text-lg rounded-lg hover:bg-blue-500 hover:text-gray-100 focus:border-4 focus:border-blue-300 w-100">
+                         <a href="{{ route('story.create') }}">
                             {{ __('Insert New Story') }}
+                            </a>
                         </button>
 
                         <div class="flex flex-col">

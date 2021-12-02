@@ -31,3 +31,4 @@ Route::middleware(['auth:sanctum', 'verified'])->post('/story/{id}', [StoryContr
 Route::middleware(['auth:sanctum', 'verified'])->get('/story/{id}/delete', [StoryController::class, 'destroy'])->name('story.destroy');
 
 Route::middleware(['auth:sanctum', 'verified'])->post('/story/{id}/comment', [CommentController::class, 'store'])->name('comment.store');
+Route::middleware(['auth:sanctum', 'verified'])->post('/comment/{id}/delete', [CommentController::class, 'destroy'])->name('comment.destroy');

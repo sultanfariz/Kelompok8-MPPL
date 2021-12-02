@@ -46,8 +46,6 @@ class CommentController extends Controller
 
         $comment->save();
 
-        dd($comment);
-
         return redirect()->back();
     }
 
@@ -91,8 +89,14 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    // public function destroy(Comment $comment)
+    public function destroy($id)
     {
-        //
+        $this->authorize('admin');
+        $comment = Comment::find($id);
+        // dd($comment);
+        $comment->delete();
+
+        return redirect()->back();
     }
 }

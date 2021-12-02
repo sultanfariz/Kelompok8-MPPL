@@ -17,7 +17,7 @@ class StoryController extends Controller
         $stories = Story::where('title', 'like', '%' . $request->keyword . '%')->get();
         return view('story.index', ['stories' => $stories]);
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +25,7 @@ class StoryController extends Controller
      */
     public function create()
     {
-        // $this->authorize('admin');
+        $this->authorize('admin');
         return view('story.create');
     }
 
@@ -70,6 +70,9 @@ class StoryController extends Controller
     public function show($id)
     {
         $story = Story::find($id);
+        if (!$story) {
+            return redirect('/')->with('error', 'Story not found');
+        }
         $comments = $story->comments;
         return view('story.show', ['story' => $story, 'comments' => $comments]);
     }

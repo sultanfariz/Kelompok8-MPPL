@@ -105,7 +105,24 @@
                                 <p class="text-sm">
                                     {{ $comment->body }}
                                 </p>
+                                @admin
+                                <form action="{{ route('comment.destroy', $comment->id) }}" method="POST">
+                                    @csrf
+                                    @method('POST')
+                                    <button type="submit" class="text-xs text-red-500 hover:text-red-700">Delete</button>
+                                </form>
+                                @endadmin
                             </div>
+                            {{-- create delete button --}}
+                            {{-- @if(Auth::check())
+                                @if(Auth::user()->id == $comment->user_id) --}}
+                                    {{-- <form action="{{ route('comment.destroy', $comment->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-xs text-red-500 hover:text-red-700">Delete</button>
+                                    </form> --}}
+                                {{-- @endif
+                            @endif --}}
                         </div>
                         @endforeach
                     </div>

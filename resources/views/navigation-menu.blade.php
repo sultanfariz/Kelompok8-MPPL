@@ -30,12 +30,12 @@
                 @admin
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
+                            <p style="color:white;">{{ __('Dashboard') }}</p>
                         </x-jet-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('story.create') }}" :active="request()->routeIs('story.create')">
-                            {{ __('Insert Story') }}
+                           <p style="color:white;"> {{ __('Insert Story') }}</p>
                         </x-jet-nav-link>
                     </div>                
                 @endadmin
